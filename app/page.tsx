@@ -76,7 +76,7 @@ export default function Home() {
           href="/"
         >
           <img src="/monx-logo.png" alt="MonX" className="h-6 w-auto" draggable={false} />
-          <span className="font-bold text-lg">MonX</span>
+        
         </a>
 
         <div className="absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-muted-foreground transition duration-200 hover:text-foreground md:flex md:space-x-2">
