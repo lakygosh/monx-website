@@ -8,6 +8,7 @@ import { FAQSection } from "@/components/faq-section"
 import { PricingSection } from "@/components/pricing-section"
 import { TopDownMonitoring } from "@/components/top-down-monitoring"
 import { VisionX } from "@/components/vision-x"
+import { UseCaseSection } from "@/components/usecases"
 import DemoContactForm from "@/components/demo-contact-form"
 
 export default function Home() {
@@ -139,7 +140,7 @@ export default function Home() {
             className="relative px-4 py-2 text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
             onClick={(e) => {
               e.preventDefault()
-              const element = document.getElementById("pricing")
+              const element = document.querySelector('[data-section="usecases"]')
               if (element) {
                 const headerOffset = 120 // Account for sticky header height + margin
                 const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
@@ -152,26 +153,7 @@ export default function Home() {
               }
             }}
           >
-            <span className="relative z-20">Pricing</span>
-          </a>
-          <a
-            className="relative px-4 py-2 text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
-            onClick={(e) => {
-              e.preventDefault()
-              const element = document.getElementById("testimonials")
-              if (element) {
-                const headerOffset = 120 // Account for sticky header height + margin
-                const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
-                const offsetPosition = elementPosition - headerOffset
-
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: "smooth",
-                })
-              }
-            }}
-          >
-            <span className="relative z-20">Testimonials</span>
+            <span className="relative z-20">Use Cases</span>
           </a>
           <a
             className="relative px-4 py-2 text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
@@ -283,16 +265,24 @@ export default function Home() {
                 VisionX
               </button>
               <button
-                onClick={() => handleMobileNavClick("pricing")}
+                onClick={() => {
+                  setIsMobileMenuOpen(false)
+                  setTimeout(() => {
+                    const element = document.querySelector('[data-section="usecases"]')
+                    if (element) {
+                      const headerOffset = 120
+                      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+                      const offsetPosition = elementPosition - headerOffset
+                      window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth",
+                      })
+                    }
+                  }, 100)
+                }}
                 className="text-left px-4 py-3 text-lg font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-background/50"
               >
-                Pricing
-              </button>
-              <button
-                onClick={() => handleMobileNavClick("testimonials")}
-                className="text-left px-4 py-3 text-lg font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-background/50"
-              >
-                Testimonials
+                Use Cases
               </button>
               <button
                 onClick={() => handleMobileNavClick("faq")}
@@ -332,14 +322,17 @@ export default function Home() {
       <VisionX data-section="visionx" />
 
       {/* Pricing Section */}
-      <div id="pricing">
+      {/* <div id="pricing">
         <PricingSection />
-      </div>
+      </div> */}
+
+      {/* Use Cases Section */}
+      <UseCaseSection />
 
       {/* Testimonials Section */}
-      <div id="testimonials">
+      {/* <div id="testimonials">
         <TestimonialsSection />
-      </div>
+      </div> */}
 
       <NewReleasePromo onBookDemo={() => setIsDemoFormOpen(true)} />
 

@@ -237,11 +237,9 @@ export function TopDownMonitoring() {
               { x: 300, index: 11 },
               { x: 250, index: 12 },
               { x: 350, index: 13 },
-              { x: 450, index: 14 },
-              { x: 400, index: 15 },
-              { x: 150, index: 18, isWarning: true },
-              { x: 320, index: 19, isWarning: true },
-              { x: 380, index: 20, isWarning: true },
+              { x: 400, index: 14 },
+              { x: 450, index: 15 },
+              { x: 500, index: 15, isWarning: true },
             ].map((item) => (
               <g
                 key={`layer4-${item.index}`}
@@ -278,19 +276,33 @@ export function TopDownMonitoring() {
               { x: 850, index: 13 },
               { x: 950, index: 14 },
               { x: 900, index: 15 },
-              { x: 1000, index: 16 },
-              { x: 1100, index: 17 },
+              { x: 1000, index: 15, isWarning: true },
+              { x: 1100, index: 15, isWarning: true },
             ].map((item) => (
               <g
-                key={`layer4-right-${item.index}`}
-                className={`transform-gpu transition-all duration-500 ${
-                  animatedNodes.has(`node-${item.index}`) ? "opacity-100 scale-100" : "opacity-0 scale-50"
-                }`}
-                style={{ transformOrigin: `${item.x}px 400px` }}
-              >
-                <circle cx={item.x} cy="400" r="16" stroke="#22c55e" strokeWidth="2" fill="none" opacity="0.7" />
-                <circle cx={item.x} cy="400" r="12" fill="#22c55e" opacity="0.2" />
-              </g>
+              key={`layer4-${item.index}`}
+              className={`transform-gpu transition-all duration-500 ${
+                animatedNodes.has(`node-${item.index}`) ? "opacity-100 scale-100" : "opacity-0 scale-50"
+              }`}
+              style={{ transformOrigin: `${item.x}px 400px` }}
+            >
+              <circle
+                cx={item.x}
+                cy="400"
+                r="16"
+                stroke={item.isWarning ? "#fbbf24" : "#22c55e"}
+                strokeWidth="2"
+                fill="none"
+                opacity="0.7"
+              />
+              <circle
+                cx={item.x}
+                cy="400"
+                r="12"
+                fill={item.isWarning ? "#fbbf24" : "#22c55e"}
+                opacity={item.isWarning ? "0.4" : "0.2"}
+              />
+            </g>
             ))}
           </svg>
         </div>

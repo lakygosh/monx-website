@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
+    "build:deploy": "next build && node -e \"const fs = require('fs'); if (fs.existsSync('build')) fs.rmSync('build', {recursive: true, force: true}); if (fs.existsSync('out')) fs.renameSync('out', 'build');\"",
     "dev": "next dev",
     "lint": "eslint .",
     "start": "next start"
