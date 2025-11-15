@@ -182,7 +182,7 @@ export default function Home() {
             href="#"
             className="rounded-md font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center bg-primary text-primary-foreground shadow-[0px_2px_0px_0px_rgba(0,0,0,0.3)_inset] px-4 py-2 text-sm hover:bg-primary/90"
           >
-            Book a Demo
+            Contact Us
           </a>
         </div>
       </header>
@@ -191,7 +191,6 @@ export default function Home() {
       <header className="sticky top-4 z-[9999] mx-4 flex w-auto flex-row items-center justify-between rounded-full bg-background/80 backdrop-blur-sm border border-border/50 shadow-lg md:hidden px-4 py-3">
         <a className="flex items-center justify-center gap-2" href="/">
           <img src="/monx-logo.png" alt="MonX" className="h-6 w-auto" draggable={false} />
-          <span className="font-bold text-lg">MonX</span>
         </a>
 
         <button

@@ -32,11 +32,21 @@ export function DemoContactForm({ isOpen, onClose }: DemoContactFormProps) {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsLoading(true)
-
+  
     try {
-      // Simulate form submission
-      await new Promise((resolve) => setTimeout(resolve, 1000))
+      const res = await fetch("/api/book-demo", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+  
+      if (!res.ok) {
+        console.error("API error:", await res.text())
+        throw new Error("Failed to submit form")
+      }
+  
       setSubmitted(true)
+  
       setTimeout(() => {
         onClose()
         setSubmitted(false)
@@ -44,6 +54,7 @@ export function DemoContactForm({ isOpen, onClose }: DemoContactFormProps) {
       }, 2000)
     } catch (error) {
       console.error("Form submission error:", error)
+      // optionally show an error message to the user
     } finally {
       setIsLoading(false)
     }
@@ -71,7 +82,7 @@ export function DemoContactForm({ isOpen, onClose }: DemoContactFormProps) {
 
           <div className="pr-8">
             <img src="/monx-logo.png" alt="MonX" className="h-8 w-auto mb-4" />
-            <h2 className="text-2xl font-bold text-foreground">Book a Demo</h2>
+            <h2 className="text-2xl font-bold text-foreground">Contact Us</h2>
             <p className="text-sm text-muted-foreground mt-2">
               Let us show you how MonX can transform your monitoring strategy
             </p>
@@ -88,7 +99,7 @@ export function DemoContactForm({ isOpen, onClose }: DemoContactFormProps) {
                 </svg>
               </div>
               <h3 className="text-lg font-bold text-foreground mb-2">Thanks for reaching out!</h3>
-              <p className="text-sm text-muted-foreground">We'll be in touch shortly to schedule your demo.</p>
+              <p className="text-sm text-muted-foreground">We'll be in touch shortly.</p>
             </motion.div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -160,7 +171,7 @@ export function DemoContactForm({ isOpen, onClose }: DemoContactFormProps) {
                 disabled={isLoading}
                 className="w-full px-4 py-2 bg-primary text-primary-foreground font-bold rounded-lg hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 hover:-translate-y-0.5"
               >
-                {isLoading ? "Scheduling..." : "Schedule Demo"}
+                {isLoading ? "Sending..." : "Send"}
               </button>
             </form>
           )}

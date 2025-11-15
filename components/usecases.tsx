@@ -1,6 +1,6 @@
 import { Marquee } from "@/components/magicui/marquee"
 
-const colors = ["#729ADF", "#22B854", "#7D7891"] // Blue, Green, Purple-gray
+const colors = ["#0099FF", "#1bca56", "#9900FF"] // Blue, Green, Purple-gray
 
 const usecases = [
   {

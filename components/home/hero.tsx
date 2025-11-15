@@ -54,8 +54,8 @@ export default function Hero() {
               className="mb-8"
             >
               <h1 id="main-title" className="text-3xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-                Real-time <strong className="text-primary">agent monitoring</strong> <br />
-                for modern <em className="italic">teams</em>
+                Everything you need <strong className="text-primary">to monitor</strong> <br />
+                anything you want<em className="italic"></em>
               </h1>
             </motion.div>
 
@@ -66,8 +66,7 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mx-auto mb-12 max-w-2xl text-lg text-muted-foreground"
             >
-              Track, analyze, and optimize your agents in real-time. Built for developers who demand complete visibility
-              and control.
+              Complete monitoring tool and expert support to help you reduce downtime.
             </motion.p>
 
             <motion.div
