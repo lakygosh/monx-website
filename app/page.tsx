@@ -298,7 +298,7 @@ export default function Home() {
                   href="#"
                   className="px-4 py-3 text-lg font-bold text-center bg-primary text-primary-foreground rounded-lg shadow-lg hover:-translate-y-0.5 transition-all duration-200"
                 >
-                  Book a Demo
+                  Contact Us
                 </a>
               </div>
             </nav>
@@ -315,8 +315,9 @@ export default function Home() {
       </div>
 
       {/* Top-Down Monitoring Section */}
+      <div id="top-down-monitoring">
       <TopDownMonitoring data-section="topdown" />
-
+      </div>
       {/* VisionX AI Section */}
       <VisionX data-section="visionx" />
 

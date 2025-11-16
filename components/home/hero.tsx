@@ -76,8 +76,21 @@ export default function Hero() {
               className="flex flex-col items-center gap-6"
             >
               {/* Get started button */}
-              <div className="flex items-center justify-center">
-                <a href="#pricing">
+              <div>
+                <a href="#top-down-monitoring" className="cursor-pointer" 
+                onClick={(e) => {
+                  e.preventDefault()
+                  const element = document.getElementById("top-down-monitoring")
+                  if (element) {
+                    const headerOffset = 120
+                    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+                    const offsetPosition = elementPosition - headerOffset
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: "smooth",
+                    })
+                  }
+                }}>
                   <div className="group cursor-pointer border border-primary/50 bg-card gap-2 h-[60px] flex items-center p-[10px] rounded-full hover:border-primary transition-all">
                     <div className="border border-primary bg-primary h-[40px] rounded-full flex items-center justify-center text-primary-foreground">
                       <p className="font-medium tracking-tight mr-3 ml-3 flex items-center gap-2 justify-center text-base">
