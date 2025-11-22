@@ -10,7 +10,7 @@ import { TopDownMonitoring } from "@/components/top-down-monitoring"
 import { VisionX } from "@/components/vision-x"
 import { UseCaseSection } from "@/components/usecases"
 import DemoContactForm from "@/components/demo-contact-form"
-
+import { FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa"
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -57,6 +57,80 @@ export default function Home() {
           background: "radial-gradient(ellipse 50% 35% at 50% 0%, rgba(34, 197, 94, 0.08), transparent 60%), #0a0a0a",
         }}
       />
+
+            {/* Social Sticky Bar – desktop */}
+            <div className="fixed right-6 top-1/2 z-[9998] -translate-y-1/2 hidden md:flex flex-col gap-3">
+        {/* LinkedIn */}
+        <a
+          href="https://www.linkedin.com/company/mon-x"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="MonX LinkedIn"
+          className="flex h-15 w-15 items-center justify-center rounded-full bg-background/80 border border-border/60 text-muted-foreground hover:text-emerald-400 hover:border-emerald-400 hover:-translate-y-0.5 transition-all duration-200"
+        >
+          <span className="sr-only">LinkedIn</span>
+          <FaLinkedin size={18} />
+        </a>
+
+        {/* Instagram */}
+        <a
+          href="https://www.instagram.com/OVDE_STAVI_SVOJ_USERNAME"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="MonX Instagram"
+          className="flex h-15 w-15 items-center justify-center rounded-full bg-background/80 border border-border/60 text-muted-foreground hover:text-emerald-400 hover:border-emerald-400 hover:-translate-y-0.5 transition-all duration-200"
+        >
+          <span className="sr-only">Instagram</span>
+          <FaInstagram size={18} />
+        </a>
+
+        {/* Email */}
+        <a
+          href="mailto:lazar.gosic@mon-x.app"
+          aria-label="Send email to lazar.gosic@mon-x.app"
+          className="flex h-15 w-15 items-center justify-center rounded-full bg-background/80 border border-border/60 text-muted-foreground hover:text-emerald-400 hover:border-emerald-400 hover:-translate-y-0.5 transition-all duration-200"
+        >
+          <span className="sr-only">Email</span>
+          <FaEnvelope size={18} />
+        </a>
+      </div>
+
+      {/* Social Sticky Bar – mobile */}
+      <div className="fixed bottom-4 right-4 z-[9998] flex md:hidden flex-row gap-3">
+        <div className="flex items-center gap-2 rounded-full bg-background/90 border border-border/60 px-3 py-2 shadow-lg backdrop-blur">
+          {/* LinkedIn */}
+          <a
+            href="https://www.linkedin.com/company/mon-x"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="MonX LinkedIn"
+            className="flex h-8 w-8 items-center justify-center rounded-full text-muted-foreground hover:text-emerald-400 transition-colors"
+          >
+            <FaLinkedin size={18} />
+          </a>
+
+          {/* Instagram */}
+          <a
+            href="https://www.instagram.com/OVDE_STAVI_SVOJ_USERNAME"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="MonX Instagram"
+            className="flex h-8 w-8 items-center justify-center rounded-full text-muted-foreground hover:text-emerald-400 transition-colors"
+          >
+            <FaInstagram size={18} />
+          </a>
+
+          {/* Email */}
+          <a
+            href="mailto:lazar.gosic@mon-x.app"
+            aria-label="Send email to lazar.gosic@mon-x.app"
+            className="flex h-8 w-8 items-center justify-center rounded-full text-muted-foreground hover:text-emerald-400 transition-colors"
+          >
+            <FaEnvelope size={18} />
+          </a>
+        </div>
+      </div>
+
 
       {/* Desktop Header */}
       <header
