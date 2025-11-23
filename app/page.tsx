@@ -383,15 +383,16 @@ export default function Home() {
       {/* Hero Section */}
       <Hero />
 
-      {/* Features Section */}
-      <div id="features">
-        <Features />
-      </div>
-
       {/* Top-Down Monitoring Section */}
       <div id="top-down-monitoring">
       <TopDownMonitoring data-section="topdown" />
       </div>
+
+      {/* Features Section */}
+      <div id="features">
+        <Features />
+      </div>
+      
       {/* VisionX AI Section */}
       <VisionX data-section="visionx" />
 
