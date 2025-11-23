@@ -49,7 +49,8 @@ export function TopDownMonitoring() {
           background: "radial-gradient(ellipse 80% 40% at 50% 50%, rgba(34, 197, 94, 0.05), transparent 70%), #0a0a0a",
         }}
       />
-
+<div className="bg-primary absolute -top-10 left-1/2 h-16 w-44 -translate-x-1/2 rounded-full opacity-40 blur-3xl select-none"></div>
+<div className="via-primary/50 absolute top-0 left-1/2 h-px w-3/5 -translate-x-1/2 bg-gradient-to-r from-transparent to-transparent transition-all ease-in-out"></div>
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Title */}
         <div className="text-center mb-16 md:mb-24">
