@@ -34,6 +34,7 @@ export default function PitchPage() {
           <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-black shadow-xl">
             <video
               controls
+              controlsList="nodownload"
               playsInline
               preload="metadata"
               poster="/videos/monx-pitch-poster.jpg"
@@ -47,12 +48,9 @@ export default function PitchPage() {
             </video>
           </div>
 
-          <div className="mt-6 flex flex-wrap items-center justify-between gap-4 text-sm">
+          <div className="mt-6 text-sm">
             <a href="/" className="text-muted-foreground underline-offset-4 hover:text-foreground hover:underline">
               Explore MonX →
-            </a>
-            <a href="/videos/monx-pitch-en.mp4" download="MonX_Pitch_Clients_EN_1080p.mp4" className="text-muted-foreground underline-offset-4 hover:text-foreground hover:underline">
-              Download video
             </a>
           </div>
         </section>
