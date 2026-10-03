@@ -34,6 +34,7 @@ export default function PitchPage() {
           <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-black shadow-xl">
             <video
               controls
+              controlsList="nodownload"
               playsInline
               preload="metadata"
               poster="/videos/monx-pitch-poster.jpg"
