@@ -2,7 +2,9 @@
 
 Bilingual (English / Serbian) marketing site for **MonX**, a business-service monitoring product that tracks what customers actually do (card payments, logins, transfers per minute) instead of server health. It is written for operations and IT leaders at banks and payment companies.
 
-**Live demo:** https://v0-saa-s-landing-page-jet-eta.vercel.app
+I co-founded MonX in November 2024, built the product MVP (React, .NET, MS SQL) and presented it at the Bank Info conference in November 2025. This repo is the product's public website.
+
+**Live site:** https://mon-x.app
 
 ![Next.js](https://img.shields.io/badge/Next.js-14-000000?style=flat-square&logo=nextdotjs&logoColor=white)
 ![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=black)
