@@ -12,7 +12,7 @@ export const en = {
   skipToContent: "Skip to content",
   languages: { label: "Language", en: "EN", sr: "SR" },
 
-  announcement: { badge: "NEW", before: "Incident register and draft reports for", strong: "NBS Decision 102/2024" },
+  announcement: { badge: "NEW", href: "#product", before: "Zabbix, Prometheus, Dynatrace and more,", strong: "on one chart with MonX" },
 
   nav: {
     label: "Main",
@@ -56,7 +56,7 @@ export const en = {
     lead: "Most monitoring watches machines. MonX watches what your customers actually do: card payments, logins and transfers, every minute. When they stop, you know before the first customer calls.",
     bookDemo: "Book a demo",
     watch: "Watch the overview",
-    proof: ["15 years in banking operations", "On-prem or SaaS", "Built for NBS 102/2024 and DORA", "Support in Serbian"],
+    proof: ["15 years in banking operations", "Windows or Linux, on-prem or SaaS", "Built for NBS 102/2024 and DORA", "Support in Serbian"],
     figureLabel: "A MonX chart of instant payments per minute over six hours, incoming and outgoing. Illustrative data.",
   },
 
@@ -174,12 +174,12 @@ export const en = {
     startsText: "It measures what the customer experiences, every minute.",
     thenText: "Then add the layers below to find the cause fast.",
     existingTitle: "Your existing tools",
-    existingText: "The component monitoring you already run stays. MonX doesn't replace it; it adds the layer above.",
+    existingText: "The component monitoring you already run stays. MonX doesn't replace it: it adds the layer above, and reads those tools as sources, so their metrics sit on the same chart as your business indicators.",
     stepsTitle: "How it works",
     steps: [
       {
         title: "Connect any source",
-        text: "If your systems record it, MonX can watch it. Agents are the SQL queries, PowerShell scripts and REST or SOAP calls your team already knows. A lightweight Agent Service runs them on a schedule, inside your network.",
+        text: "If your systems record it, MonX can watch it. Agents are the SQL queries, PowerShell scripts and REST or SOAP calls your team already knows, or a plain check of a URL's status and response time. A lightweight Agent Service runs them on a schedule, inside your network, on Windows or Linux.",
       },
       {
         title: "Turn results into indicators",
@@ -202,11 +202,11 @@ export const en = {
         label: "Live indicators",
         title: "Live business indicators",
         tags: ["Every minute", "Any source"],
-        text: "Card payments, logins, transfers and anything else your systems record, as live indicators and charts. Group them by business service, put them on a wall screen, and scroll back through the history.",
+        text: "Card payments, logins, transfers and anything else your systems record, as live indicators and charts. Group them by business service, put them on a wall screen, and compare any window with the day, week or four weeks before.",
         points: [
           "Agents in SQL, PowerShell, REST and SOAP",
-          "Levels per indicator, from good to very bad",
-          "Dashboards, charts and a ticker for maintenance notices",
+          "Levels from good to very bad, and No data when values stop, never a stale green",
+          "Dashboards with baselines, bands and a maintenance ticker",
         ],
       },
       anomaly: {
@@ -231,6 +231,17 @@ export const en = {
           "Fewer people chasing the wrong alarm",
         ],
       },
+      sources: {
+        label: "All your tools",
+        title: "Every monitoring tool, on one chart",
+        tags: ["21 connectors", "Read live, never copied"],
+        text: "Zabbix sees the servers, Dynatrace the application, MonX the payments. Connect each tool as a source with a read-only account, then search them all at once and chart their signals next to MonX's own indicators, read live from each tool. MonX keeps no copy of their numbers and never changes anything in them.",
+        points: [
+          "e.g. Prometheus, Zabbix, Dynatrace, SCOM, SolarWinds, Splunk and Datadog",
+          "A health check every minute, and an alert when a tool stops answering",
+          "Each tool is called from the network zone that reaches it",
+        ],
+      },
       incidents: {
         label: "Incidents and reports",
         title: "Report to the regulator on time",
@@ -246,7 +257,7 @@ export const en = {
         label: "AI assistant",
         title: "Ask MonX what happened",
         tags: ["Your own model", "Read-only"],
-        text: "Ask in any language about agents, indicators, alerts, anomalies or incidents. The assistant reads only what you may read, shows what it read, and proposes changes you approve in the normal form. It can run on the bank's own model, so data stays in the bank.",
+        text: "Ask in any language about agents, indicators, alerts, anomalies, incidents or your other tools' signals. The assistant reads only what you may read, shows what it read, and proposes changes you approve in the normal form. It can run on the bank's own model, so data stays in the bank.",
         points: [
           "Explain any alert from recent values, levels and changes",
           "Draft incident descriptions, root causes and actions",
@@ -308,12 +319,12 @@ export const en = {
       "Your security team gets a full pack to start from: an overview, the threat model, the NBS mapping, questionnaire answers and a software bill of materials for every release.",
     securityButton: "Ask for the security pack",
     security: [
-      { title: "Runs inside your bank", text: "Windows Server, IIS and SQL Server. Reached only from your network, and installs without internet access." },
+      { title: "Runs inside your bank", text: "Windows Server with IIS, or Linux with nginx, and SQL Server. Reached only from your network, and installs without internet access." },
       { title: "Your data stays with you", text: "Everything MonX records lives in your own SQL Server database. MonX sends nothing to us." },
       { title: "Sign-in your way", text: "Windows (Active Directory), single sign-on with your provider, or passwords with two-step sign-in." },
-      { title: "Secrets nobody can read back", text: "Agents' passwords are encrypted so only the MonX service can use them. Not even an administrator sees them." },
-      { title: "Every change on record", text: "Who changed what and when, in the app and in the Windows Event Log for your SIEM." },
-      { title: "Least privilege", text: "Viewer, Configurator and Administrator roles, checked by the API on every request." },
+      { title: "Secrets nobody can read back", text: "Passwords for agents and connected tools are encrypted so only the MonX service can use them. Not even an administrator sees them." },
+      { title: "Every change on record", text: "Who changed what and when, in the app and in the Windows Event Log or the Linux journal, for your SIEM." },
+      { title: "Least privilege", text: "Viewer, Configurator and Administrator roles, checked by the API on every request. Viewers never see what an agent runs." },
     ],
   },
 
@@ -347,7 +358,7 @@ export const en = {
         title: "15 years in practice",
         text: "The top-down approach was developed and used in one of the largest banking IT systems in Serbia. MonX turns it into a product.",
       },
-      { title: "Skills you already have", text: "SQL, PowerShell, SQL Server, IIS. No new query languages or stacks to maintain." },
+      { title: "Skills you already have", text: "SQL, PowerShell and SQL Server, on Windows or Linux. No new query languages or stacks to maintain." },
       { title: "Your data stays with you", text: "Fully on-prem, or SaaS with a lightweight agent on your network. Minimal load on your systems." },
       { title: "Local and hands-on", text: "A Belgrade-based team with support in Serbian. We help you design your monitoring and write the agents." },
     ],
@@ -393,12 +404,16 @@ export const en = {
         a: "Good, keep them. MonX doesn't replace them. It adds the layer above: indicators of service delivery to customers.",
       },
       {
+        q: "Can MonX read our other monitoring tools?",
+        a: "Yes. Connect Prometheus, Zabbix, Dynatrace, SCOM, SolarWinds, Splunk or one of 15 other tools as a source, with a read-only account. MonX reads it live when someone looks, keeps no copy of its numbers, and tells you when it stops answering. The connectors follow each vendor's API documentation; in the pilot we check yours first.",
+      },
+      {
         q: "Can't we build this ourselves?",
         a: "You can. Compare the effort: scripts, scheduling, metric storage, dashboards, alerting, incident reporting and the upkeep of all of it. We suggest a side-by-side test on one service.",
       },
       {
-        q: "Why Windows and .NET?",
-        a: "Because that is what most banks run: SQL Server, IIS, PowerShell. No new stack just for monitoring.",
+        q: "Does MonX run on Linux?",
+        a: "Yes. Every part of MonX runs on Windows Server or on Linux (Red Hat Enterprise Linux 9 and 10 and compatible distributions, Ubuntu 24.04 LTS and later), from the same programs. You can mix them: Linux hosts for SQL and REST agents, and a Windows one for scripts that need Windows. The database is SQL Server either way.",
       },
       {
         q: "Where does our data live?",
@@ -406,7 +421,7 @@ export const en = {
       },
       {
         q: "What does MonX need to run?",
-        a: "Windows Server, IIS and SQL Server for the web app and its APIs, and the Agent Service on a server that can reach the systems you monitor. You can run several Agent Services, for example one per network zone or data center.",
+        a: "SQL Server, and a web server for the web app and its APIs: Windows Server with IIS, or Linux with nginx. Then the Agent Service on a server that can reach the systems you monitor. You can run several Agent Services, for example one per network zone or data center.",
       },
       {
         q: "Does MonX send our data to an AI provider?",
@@ -449,7 +464,7 @@ export const en = {
 
   structuredData: {
     description:
-      "Business service monitoring, top-down: live indicators of what customers actually do, anomaly detection, root-cause hints and incident reports for NBS Decision 102/2024.",
+      "Business service monitoring, top-down: live indicators of what customers actually do, anomaly detection, root-cause hints, your other monitoring tools on one chart, and incident reports for NBS Decision 102/2024.",
   },
 }
 

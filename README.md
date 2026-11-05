@@ -24,7 +24,7 @@ MonX's pitch is easy to say and hard to show: component monitoring can report "a
 
 - **Two complete locales:** English at `/` and Serbian at `/sr`. Each has its own root layout, so every page gets the correct `<html lang>`, plus `hreflang` alternates and canonical URLs.
 - **Animated storytelling sections:** a "payments drop" counter that falls from 2,847/min to zero while every component stays "OK", a live-ticking hero metric card, and scroll-triggered reveals.
-- **Coded product mockups:** dashboards, anomaly bands, correlated metrics, incident records, an assistant chat and grouped alerts, built as React components with generated chart data (`components/mocks/`).
+- **Coded product mockups:** dashboards, anomaly bands, correlated metrics, an Explore chart that puts other monitoring tools' signals next to MonX's own, incident records, an assistant chat and grouped alerts, built as React components with generated chart data (`components/mocks/`).
 - **Tabbed product tour and cost breakdown** built on Radix Tabs, plus an FAQ on Radix Accordion.
 - **"Book a demo" flow:** a Radix Dialog form posts to a Next.js API route, which sends the request by SMTP through Nodemailer.
 - **Product video page** (`/pitch`): a standalone, `noindex` page with the 90-second product overview video, for sharing directly.

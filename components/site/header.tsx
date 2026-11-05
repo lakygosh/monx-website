@@ -12,7 +12,7 @@ export function AnnouncementBar({ t }: { t: Dict["announcement"] }) {
   return (
     <div className="bg-paper">
       <a
-        href="#compliance"
+        href={t.href}
         className="container-page group flex h-10 items-center justify-center gap-2 text-center text-[0.8125rem] text-mute transition-colors hover:text-ink"
       >
         <span className="rounded-full bg-green-wash px-2 py-0.5 font-mono text-[0.6875rem] font-medium tracking-wide text-green-deep">
