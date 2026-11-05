@@ -1,6 +1,6 @@
 import type React from "react"
 import { Check } from "lucide-react"
-import { AlertsMock, AnomalyMock, AssistantMock, DashboardMock, IncidentMock, MovedMock } from "@/components/mocks/product-mocks"
+import { AlertsMock, AnomalyMock, AssistantMock, DashboardMock, ExploreMock, IncidentMock, MovedMock } from "@/components/mocks/product-mocks"
 import { ProductTabs } from "@/components/sections/product-tabs"
 import { SectionHeader } from "@/components/ui/primitives"
 import type { Dict } from "@/lib/i18n/en"
@@ -36,6 +36,7 @@ const mocks: Record<keyof Dict["product"]["tabs"], React.ReactNode> = {
   live: <DashboardMock />,
   anomaly: <AnomalyMock />,
   moved: <MovedMock />,
+  sources: <ExploreMock />,
   incidents: <IncidentMock />,
   assistant: <AssistantMock />,
   alerts: <AlertsMock />,

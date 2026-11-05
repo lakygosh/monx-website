@@ -26,7 +26,7 @@ export function HomePage({ t }: { t: Dict }) {
       "@type": "SoftwareApplication",
       name: "MonX",
       applicationCategory: "BusinessApplication",
-      operatingSystem: "Windows Server",
+      operatingSystem: "Windows Server, Linux",
       inLanguage: t.htmlLang,
       description: t.structuredData.description,
       url,

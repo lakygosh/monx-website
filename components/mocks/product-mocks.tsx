@@ -1,4 +1,4 @@
-import { Check, Copy, Megaphone, Printer, Send, Sparkles } from "lucide-react"
+import { Check, Copy, Megaphone, Printer, Search, Send, Sparkles } from "lucide-react"
 import { AppFrame, MockCard, Pill } from "@/components/mocks/app-frame"
 import { areaPath, bandPath, linePath, seeded, series } from "@/lib/series"
 import { cn } from "@/lib/utils"
@@ -202,6 +202,108 @@ export function MovedMock() {
         ))}
       </ul>
       <p className="mt-3 text-[0.6875rem] text-white/45">Moving together doesn&apos;t prove one caused the other. It shows where to look next.</p>
+    </AppFrame>
+  )
+}
+
+/* ---------------------------------------------------------------- Explore: every source on one chart */
+
+const EN = 60
+const STEP = 34
+function signal(seed: number, from: number, to: number, lead: number, noise = 0.05) {
+  const r = seeded(seed)
+  return Array.from({ length: EN }, (_, i) => {
+    const k = 1 / (1 + Math.exp(-(i - (STEP - lead)) * 0.9))
+    return from + (to - from) * k + (r() - 0.5) * noise
+  })
+}
+
+const signals = [
+  { name: "Card payments / min", source: "MonX", color: "#22c55e", data: signal(31, 0.78, 0.06, 0), width: 2 },
+  { name: "Response time · card-auth", source: "Dynatrace", color: "#f2a93b", data: signal(32, 0.2, 0.86, 2), width: 1.5 },
+  { name: "node_load1 · core-db01", source: "Prometheus", color: "#67e8f9", data: signal(33, 0.3, 0.92, 3), width: 1.5 },
+  { name: "CPU utilization · core-db01", source: "Zabbix", color: "#c4a5fd", data: signal(34, 0.26, 0.7, 3, 0.07), width: 1.5 },
+]
+const exploreBox = { width: 640, height: 190, min: 0, max: 1, pad: 6 }
+const stepX = ((STEP - 3) / (EN - 1)) * exploreBox.width
+
+const health = [
+  { name: "MonX", note: "Built in", state: "Up" },
+  { name: "Prometheus", note: "DC1 · checked 17:58", state: "Up" },
+  { name: "Zabbix", note: "DC1 · checked 17:58", state: "Up" },
+  { name: "SCOM", note: "Last success 17:51", state: "Degraded" },
+]
+
+export function ExploreMock() {
+  return (
+    <AppFrame crumbs={["Explore"]} active={7}>
+      <div className="flex flex-wrap items-end justify-between gap-3">
+        <div>
+          <p className="font-display text-base font-semibold">Explore</p>
+          <p className="text-[0.6875rem] text-white/50">Signals from every source on one chart, read live from each tool.</p>
+        </div>
+        <div className="flex gap-1">
+          {["1h", "6h", "24h", "7d"].map((r) => (
+            <Pill key={r} active={r === "1h"}>
+              {r}
+            </Pill>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-4 flex items-center gap-2 rounded-xl bg-[#1d1e1d] px-3.5 py-2 ring-1 ring-white/10">
+        <Search className="size-3.5 text-white/40" />
+        <span className="text-[0.75rem]">core-db01</span>
+        <span className="ml-auto text-[0.625rem] text-white/45">4 sources asked · 4 answered</span>
+      </div>
+
+      <MockCard className="mt-3 p-3 md:p-4">
+        <svg viewBox={`0 0 ${exploreBox.width} ${exploreBox.height}`} className="h-auto w-full overflow-visible">
+          {[0.25, 0.5, 0.75].map((y) => (
+            <line key={y} x1="0" x2={exploreBox.width} y1={exploreBox.height * y} y2={exploreBox.height * y} stroke="white" strokeOpacity="0.06" />
+          ))}
+          <line x1={stepX} x2={stepX} y1="0" y2={exploreBox.height} stroke="white" strokeOpacity="0.3" strokeDasharray="3 4" />
+          {signals.map((s) => (
+            <path key={s.name} d={linePath(s.data, exploreBox)} fill="none" stroke={s.color} strokeWidth={s.width} vectorEffect="non-scaling-stroke" />
+          ))}
+        </svg>
+        <div className="mt-2 flex justify-between font-mono text-[0.625rem] text-white/40">
+          {["17:00", "17:15", "17:30", "17:45", "18:00"].map((t) => (
+            <span key={t}>{t}</span>
+          ))}
+        </div>
+        <ul className="mt-3 grid gap-x-4 gap-y-1.5 border-t border-white/[0.06] pt-3 sm:grid-cols-2">
+          {signals.map((s) => (
+            <li key={s.name} className="flex min-w-0 items-center gap-2 text-[0.6875rem]">
+              <span className="h-0.5 w-3.5 shrink-0 rounded-full" style={{ background: s.color }} />
+              <span className="truncate text-white/80">{s.name}</span>
+              <span className="ml-auto shrink-0 rounded-md bg-white/[0.05] px-1.5 py-0.5 font-mono text-[0.5625rem] text-white/55 ring-1 ring-white/[0.06]">
+                {s.source}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </MockCard>
+
+      <div className="mt-3 grid grid-cols-2 gap-2 xl:grid-cols-4">
+        {health.map((h) => (
+          <div key={h.name} className="rounded-xl bg-[#1a1b1a] px-3 py-2 ring-1 ring-white/[0.05]">
+            <div className="flex items-center justify-between gap-2">
+              <p className="truncate text-[0.6875rem]">{h.name}</p>
+              <span
+                className={cn(
+                  "inline-flex shrink-0 items-center gap-1 rounded-full px-1.5 py-0.5 text-[0.5625rem]",
+                  h.state === "Up" ? "bg-green/15 text-green" : "bg-amber/15 text-amber",
+                )}
+              >
+                {h.state === "Up" ? <span className="size-1 rounded-full bg-green" /> : null}
+                {h.state}
+              </span>
+            </div>
+            <p className="mt-0.5 truncate text-[0.5625rem] text-white/40">{h.note}</p>
+          </div>
+        ))}
+      </div>
     </AppFrame>
   )
 }

@@ -14,7 +14,7 @@ export const sr: Dict = {
   skipToContent: "Preskoči na sadržaj",
   languages: { label: "Jezik", en: "EN", sr: "SR" },
 
-  announcement: { badge: "NOVO", before: "Registar incidenata i nacrti izveštaja za", strong: "Odluku NBS 102/2024" },
+  announcement: { badge: "NOVO", href: "#product", before: "Zabbix, Prometheus, Dynatrace i drugi,", strong: "na jednom grafikonu sa MonX-om" },
 
   nav: {
     label: "Glavni meni",
@@ -58,7 +58,7 @@ export const sr: Dict = {
     lead: "Većina alata za monitoring prati mašine. MonX prati ono što vaši klijenti zaista rade: plaćanja karticama, prijave i transfere, svakog minuta. Kada stanu, saznajete pre nego što pozove prvi klijent.",
     bookDemo: "Zakažite demo",
     watch: "Pogledajte pregled",
-    proof: ["15 godina u bankarskim operacijama", "On-prem ili SaaS", "Usklađen sa Odlukom NBS 102/2024 i DORA", "Podrška na srpskom"],
+    proof: ["15 godina u bankarskim operacijama", "Windows ili Linux, on-prem ili SaaS", "Usklađen sa Odlukom NBS 102/2024 i DORA", "Podrška na srpskom"],
     figureLabel: "MonX grafikon instant plaćanja po minutu tokom šest sati, dolazna i odlazna. Ilustrativni podaci.",
   },
 
@@ -176,12 +176,12 @@ export const sr: Dict = {
     startsText: "Meri ono što klijent doživljava, svakog minuta.",
     thenText: "Zatim dodajte slojeve ispod da brzo pronađete uzrok.",
     existingTitle: "Vaši postojeći alati",
-    existingText: "Monitoring komponenti koji već imate ostaje. MonX ga ne zamenjuje, već dodaje sloj iznad.",
+    existingText: "Monitoring komponenti koji već imate ostaje. MonX ga ne zamenjuje, već dodaje sloj iznad i čita te alate kao izvore, pa su njihove metrike na istom grafikonu kao vaši poslovni indikatori.",
     stepsTitle: "Kako radi",
     steps: [
       {
         title: "Povežite bilo koji izvor",
-        text: "Ako vaši sistemi to beleže, MonX može da prati. Agenti su SQL upiti, PowerShell skripte i REST ili SOAP pozivi koje vaš tim već poznaje. Lagani Agent Service ih pokreće po rasporedu, unutar vaše mreže.",
+        text: "Ako vaši sistemi to beleže, MonX može da prati. Agenti su SQL upiti, PowerShell skripte i REST ili SOAP pozivi koje vaš tim već poznaje, ili obična provera statusa i vremena odziva neke adrese. Lagani Agent Service ih pokreće po rasporedu, unutar vaše mreže, na Windowsu ili Linuxu.",
       },
       {
         title: "Pretvorite rezultate u indikatore",
@@ -204,11 +204,11 @@ export const sr: Dict = {
         label: "Indikatori uživo",
         title: "Poslovni indikatori uživo",
         tags: ["Svakog minuta", "Bilo koji izvor"],
-        text: "Plaćanja karticama, prijave, transferi i sve drugo što vaši sistemi beleže, kao indikatori i grafikoni uživo. Grupišite ih po poslovnom servisu, prikažite na zidnom ekranu i vratite se kroz istoriju.",
+        text: "Plaćanja karticama, prijave, transferi i sve drugo što vaši sistemi beleže, kao indikatori i grafikoni uživo. Grupišite ih po poslovnom servisu, prikažite na zidnom ekranu i uporedite bilo koji period sa danom, nedeljom ili četiri nedelje ranije.",
         points: [
           "Agenti u SQL-u, PowerShell-u, REST-u i SOAP-u",
-          "Nivoi po indikatoru, od dobrog do veoma lošeg",
-          "Dashboardi, grafikoni i traka za najave održavanja",
+          "Nivoi od dobrog do veoma lošeg, i „Nema podataka” kada vrednosti stanu, nikad zastarelo zeleno",
+          "Dashboardi sa referentnim linijama, opsezima i trakom za najave održavanja",
         ],
       },
       anomaly: {
@@ -233,6 +233,17 @@ export const sr: Dict = {
           "Manje ljudi juri pogrešan alarm",
         ],
       },
+      sources: {
+        label: "Svi vaši alati",
+        title: "Svi alati za monitoring, na jednom grafikonu",
+        tags: ["21 konektor", "Čita uživo, ne kopira"],
+        text: "Zabbix vidi servere, Dynatrace aplikaciju, MonX plaćanja. Povežite svaki alat kao izvor preko naloga samo za čitanje, pa ih pretražite sve odjednom i prikažite njihove signale pored MonX-ovih indikatora, pročitane uživo iz svakog alata. MonX ne čuva kopiju njihovih brojeva i ništa u njima ne menja.",
+        points: [
+          "npr. Prometheus, Zabbix, Dynatrace, SCOM, SolarWinds, Splunk i Datadog",
+          "Provera dostupnosti svakog minuta i alarm kada alat prestane da odgovara",
+          "Svaki alat se poziva iz mrežne zone koja do njega dopire",
+        ],
+      },
       incidents: {
         label: "Incidenti i izveštaji",
         title: "Izveštavajte regulatora na vreme",
@@ -248,7 +259,7 @@ export const sr: Dict = {
         label: "AI asistent",
         title: "Pitajte MonX šta se desilo",
         tags: ["Vaš model", "Samo čitanje"],
-        text: "Pitajte na bilo kom jeziku o agentima, indikatorima, alarmima, anomalijama ili incidentima. Asistent čita samo ono što vi smete da vidite, pokazuje šta je pročitao i predlaže izmene koje odobravate u standardnoj formi. Može da radi na modelu same banke, pa podaci ostaju u banci.",
+        text: "Pitajte na bilo kom jeziku o agentima, indikatorima, alarmima, anomalijama, incidentima ili signalima iz vaših drugih alata. Asistent čita samo ono što vi smete da vidite, pokazuje šta je pročitao i predlaže izmene koje odobravate u standardnoj formi. Može da radi na modelu same banke, pa podaci ostaju u banci.",
         points: [
           "Objašnjenje bilo kog alarma iz skorašnjih vrednosti, nivoa i izmena",
           "Nacrti opisa incidenata, uzroka i preduzetih mera",
@@ -310,12 +321,12 @@ export const sr: Dict = {
       "Vaš bezbednosni tim dobija kompletan paket za početak: pregled, model pretnji, mapiranje na zahteve NBS, odgovore na upitnik i spisak softverskih komponenti (SBOM) za svako izdanje.",
     securityButton: "Zatražite bezbednosni paket",
     security: [
-      { title: "Radi unutar vaše banke", text: "Windows Server, IIS i SQL Server. Dostupan samo iz vaše mreže, a instalira se bez pristupa internetu." },
+      { title: "Radi unutar vaše banke", text: "Windows Server sa IIS-om ili Linux sa nginx-om, i SQL Server. Dostupan samo iz vaše mreže, a instalira se bez pristupa internetu." },
       { title: "Vaši podaci ostaju kod vas", text: "Sve što MonX beleži nalazi se u vašoj SQL Server bazi. MonX nama ne šalje ništa." },
       { title: "Prijava po vašem izboru", text: "Windows (Active Directory), single sign-on preko vašeg provajdera ili lozinka uz prijavu u dva koraka." },
-      { title: "Tajne koje niko ne može da pročita", text: "Lozinke agenata su šifrovane tako da ih koristi samo MonX servis. Ne vidi ih čak ni administrator." },
-      { title: "Svaka izmena je zabeležena", text: "Ko je šta promenio i kada, u aplikaciji i u Windows Event Logu za vaš SIEM." },
-      { title: "Najmanja potrebna prava", text: "Uloge Viewer, Configurator i Administrator, koje API proverava pri svakom zahtevu." },
+      { title: "Tajne koje niko ne može da pročita", text: "Lozinke agenata i povezanih alata su šifrovane tako da ih koristi samo MonX servis. Ne vidi ih čak ni administrator." },
+      { title: "Svaka izmena je zabeležena", text: "Ko je šta promenio i kada, u aplikaciji i u Windows Event Logu ili Linux journalu, za vaš SIEM." },
+      { title: "Najmanja potrebna prava", text: "Uloge Viewer, Configurator i Administrator, koje API proverava pri svakom zahtevu. Viewer nikad ne vidi šta agent pokreće." },
     ],
   },
 
@@ -349,7 +360,7 @@ export const sr: Dict = {
         title: "15 godina u praksi",
         text: "Top-down pristup je razvijen i korišćen u jednom od najvećih bankarskih IT sistema u Srbiji. MonX ga pretvara u proizvod.",
       },
-      { title: "Znanja koja već imate", text: "SQL, PowerShell, SQL Server, IIS. Bez novih jezika za upite i novih tehnologija za održavanje." },
+      { title: "Znanja koja već imate", text: "SQL, PowerShell i SQL Server, na Windowsu ili Linuxu. Bez novih jezika za upite i novih tehnologija za održavanje." },
       { title: "Vaši podaci ostaju kod vas", text: "Potpuno on-prem, ili SaaS sa laganim agentom u vašoj mreži. Minimalno opterećenje vaših sistema." },
       { title: "Lokalno i iz prve ruke", text: "Tim iz Beograda sa podrškom na srpskom. Pomažemo vam da osmislite monitoring i napišete agente." },
     ],
@@ -395,12 +406,16 @@ export const sr: Dict = {
         a: "Odlično, zadržite ih. MonX ih ne zamenjuje. Dodaje sloj iznad: indikatore pružanja usluge klijentima.",
       },
       {
+        q: "Da li MonX može da čita naše druge alate za monitoring?",
+        a: "Može. Povežite Prometheus, Zabbix, Dynatrace, SCOM, SolarWinds, Splunk ili neki od još 15 alata kao izvor, preko naloga samo za čitanje. MonX ga čita uživo kada neko pogleda, ne čuva kopiju njegovih brojeva i javlja vam kada alat prestane da odgovara. Konektori prate API dokumentaciju svakog proizvođača; u pilotu prvo proveravamo vaše.",
+      },
+      {
         q: "Zar ne možemo sami da napravimo ovo?",
         a: "Možete. Uporedite trud: skripte, raspoređivanje, čuvanje metrika, dashboardi, alarmi, izveštavanje o incidentima i održavanje svega toga. Predlažemo uporedni test na jednom servisu.",
       },
       {
-        q: "Zašto Windows i .NET?",
-        a: "Zato što to koristi većina banaka: SQL Server, IIS, PowerShell. Bez nove tehnologije samo zbog monitoringa.",
+        q: "Da li MonX radi na Linuxu?",
+        a: "Radi. Svaki deo MonX-a radi na Windows Serveru ili na Linuxu (Red Hat Enterprise Linux 9 i 10 i kompatibilne distribucije, Ubuntu 24.04 LTS i novije), iz istih programa. Možete ih kombinovati: Linux hostovi za SQL i REST agente, a Windows za skripte kojima je potreban Windows. Baza je u oba slučaja SQL Server.",
       },
       {
         q: "Gde se nalaze naši podaci?",
@@ -408,7 +423,7 @@ export const sr: Dict = {
       },
       {
         q: "Šta je MonX-u potrebno za rad?",
-        a: "Windows Server, IIS i SQL Server za veb aplikaciju i njene API-je, i Agent Service na serveru koji može da pristupi sistemima koje pratite. Možete pokrenuti više Agent Service instanci, na primer po jednu za svaku mrežnu zonu ili data centar.",
+        a: "SQL Server i veb server za veb aplikaciju i njene API-je: Windows Server sa IIS-om ili Linux sa nginx-om. Zatim Agent Service na serveru koji može da pristupi sistemima koje pratite. Možete pokrenuti više Agent Service instanci, na primer po jednu za svaku mrežnu zonu ili data centar.",
       },
       {
         q: "Da li MonX šalje naše podatke AI provajderu?",
@@ -451,6 +466,6 @@ export const sr: Dict = {
 
   structuredData: {
     description:
-      "Monitoring poslovnih servisa, top-down: indikatori uživo onoga što klijenti zaista rade, detekcija anomalija, tragovi do uzroka i izveštaji o incidentima za Odluku NBS 102/2024.",
+      "Monitoring poslovnih servisa, top-down: indikatori uživo onoga što klijenti zaista rade, detekcija anomalija, tragovi do uzroka, vaši drugi alati za monitoring na jednom grafikonu i izveštaji o incidentima za Odluku NBS 102/2024.",
   },
 }
