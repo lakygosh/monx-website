@@ -415,7 +415,7 @@ export const sr: Dict = {
       },
       {
         q: "Da li MonX radi na Linuxu?",
-        a: "Radi. Svaki deo MonX-a radi na Windows Serveru ili na Linuxu (Red Hat Enterprise Linux 9 i 10 i kompatibilne distribucije, Ubuntu 24.04 LTS i novije), iz istih programa. Možete ih kombinovati: Linux hostovi za SQL i REST agente, a Windows za skripte kojima je potreban Windows. Baza je u oba slučaja SQL Server.",
+        a: "Radi. Svaki deo MonX-a radi na Windows Serveru ili na Linuxu (Red Hat Enterprise Linux 9 i 10 i kompatibilne distribucije, uz uključen SELinux, Ubuntu 24.04 LTS i novije), iz istih programa. Možete ih kombinovati: Linux hostovi za SQL i REST agente, a Windows za skripte kojima je potreban Windows. Baza je u oba slučaja SQL Server.",
       },
       {
         q: "Gde se nalaze naši podaci?",

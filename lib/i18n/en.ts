@@ -413,7 +413,7 @@ export const en = {
       },
       {
         q: "Does MonX run on Linux?",
-        a: "Yes. Every part of MonX runs on Windows Server or on Linux (Red Hat Enterprise Linux 9 and 10 and compatible distributions, Ubuntu 24.04 LTS and later), from the same programs. You can mix them: Linux hosts for SQL and REST agents, and a Windows one for scripts that need Windows. The database is SQL Server either way.",
+        a: "Yes. Every part of MonX runs on Windows Server or on Linux (Red Hat Enterprise Linux 9 and 10 and compatible distributions with SELinux enforcing, Ubuntu 24.04 LTS and later), from the same programs. You can mix them: Linux hosts for SQL and REST agents, and a Windows one for scripts that need Windows. The database is SQL Server either way.",
       },
       {
         q: "Where does our data live?",
