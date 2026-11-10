@@ -82,13 +82,6 @@ export function Cost({ t }: { t: Dict["cost"] }) {
             </Tabs.Root>
           </Reveal>
         </div>
-
-        <Reveal className="mx-auto mt-14 max-w-3xl text-center">
-          <blockquote className="font-display text-[clamp(1.25rem,2.2vw,1.625rem)] leading-snug font-medium tracking-tight text-white">
-            {t.quote}
-          </blockquote>
-          <p className="mt-3 font-mono text-xs text-mute-dark">{t.quoteSource}</p>
-        </Reveal>
       </div>
     </section>
   )

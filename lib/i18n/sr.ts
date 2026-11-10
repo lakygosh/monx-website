@@ -158,8 +158,6 @@ export const sr: Dict = {
         helps: "uočite pad kvaliteta pre klijenata i rešite ga pre nego što postane vest.",
       },
     ],
-    quote: "„…govorim o 15 do 30 miliona dolara za svaki zastoj koji imamo.”",
-    quoteSource: "Tehnološki rukovodilac, JPMorgan Chase (Splunk, 2024)",
   },
 
   how: {
@@ -364,7 +362,7 @@ export const sr: Dict = {
       { title: "Vaši podaci ostaju kod vas", text: "Potpuno on-prem, ili SaaS sa laganim agentom u vašoj mreži. Minimalno opterećenje vaših sistema." },
       { title: "Lokalno i iz prve ruke", text: "Tim iz Beograda sa podrškom na srpskom. Pomažemo vam da osmislite monitoring i napišete agente." },
     ],
-    quote: "„Napravili su ga ljudi koji su petnaest godina vodili velike incidente. Alat kakav smo i sami želeli da imamo.”",
+    foundersTitle: "Osnivači",
     founders: [
       {
         initials: "DG",
