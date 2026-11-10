@@ -156,8 +156,6 @@ export const en = {
         helps: "catch degradation before customers do, and fix it before it becomes a headline.",
       },
     ],
-    quote: "“…I'm talking around $15 to $30 million for each downtime that we have.”",
-    quoteSource: "Technology executive, JPMorgan Chase (Splunk, 2024)",
   },
 
   how: {
@@ -362,7 +360,7 @@ export const en = {
       { title: "Your data stays with you", text: "Fully on-prem, or SaaS with a lightweight agent on your network. Minimal load on your systems." },
       { title: "Local and hands-on", text: "A Belgrade-based team with support in Serbian. We help you design your monitoring and write the agents." },
     ],
-    quote: "“Built by people who ran major incidents for fifteen years. The tool we wished we'd had.”",
+    foundersTitle: "The founders",
     founders: [
       {
         initials: "DG",

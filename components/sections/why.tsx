@@ -26,8 +26,8 @@ export function Why({ t }: { t: Dict["why"] }) {
 
         <Reveal delay={0.1} className="relative flex flex-col overflow-hidden rounded-3xl bg-ink p-6 text-white md:p-8">
           <div aria-hidden className="absolute -top-24 -right-24 size-72 rounded-full bg-green/20 blur-3xl" />
-          <p className="relative font-display text-[1.375rem] leading-snug font-medium tracking-tight">{t.quote}</p>
-          <ul className="relative mt-auto space-y-5 pt-8">
+          <h3 className="type-h3 relative text-white">{t.foundersTitle}</h3>
+          <ul className="relative mt-6 space-y-5">
             {t.founders.map((f) => (
               <li key={f.name} className="flex gap-4">
                 <span className="grid size-11 shrink-0 place-items-center rounded-full bg-white/[0.06] font-mono text-xs text-green ring-1 ring-white/10">
